@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="GP_Tracker.Result"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GP_Tracker"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,9.667">
+            <TextBlock FontSize="50" TextAlignment="Center">
+                <Run Text="GRADE POINT"/>
+            	    <LineBreak/>
+            	 <Run Text="AVERAGE"/>
+            </TextBlock>
+        </StackPanel>
+
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="65*"/>
+                <RowDefinition Height="65*"/>
+                <RowDefinition Height="65*"/>
+                <RowDefinition Height="212*"/>
+            </Grid.RowDefinitions>
+
+            <TextBox FontWeight="Bold" Name="marksearned" IsReadOnly="True" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Width="125" FontSize="20"/>
+            <TextBox FontWeight="Bold" Name="totalunits"  IsReadOnly="True" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Width="125" FontSize="20"/>
+            <TextBox FontWeight="Bold" Name="gpa" IsReadOnly="True" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Width="125" FontSize="20" />
+
+            <TextBlock Text="WEIGHT" Width="155" Grid.Row="1" Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+            <TextBlock Text="TOTAL UNITS" Width="155" Grid.Row="2" Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+            <TextBlock  Text="GPA"  Width="155" Grid.Row="3" Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+
+            <!--Comment Block-->
+            <TextBlock Name="comment" Grid.Row="4" Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="20" Height="108"/>
+        </Grid>
+    </Grid>
+</Page>
+
